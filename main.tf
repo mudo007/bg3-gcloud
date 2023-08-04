@@ -44,8 +44,8 @@ resource "google_compute_instance" "bg3" {
   scheduling {
     automatic_restart   = false
     on_host_maintenance = "TERMINATE"
-    preemptible         = false
-    provisioning_model  = "STANDARD"
+    preemptible         = true
+    provisioning_model  = "SPOT"
   }
 
   shielded_instance_config {

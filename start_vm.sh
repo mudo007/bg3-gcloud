@@ -30,4 +30,4 @@ terraform init
 terraform apply -auto-approve
 
 #starts the provisioned VM
-gcloud compute instances start BG3
+gcloud compute instances start bg3

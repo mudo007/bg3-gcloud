@@ -1,1 +1,1 @@
-gcloud compute instances stop BG3
+gcloud compute instances stop bg3
