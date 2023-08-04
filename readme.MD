@@ -7,18 +7,19 @@ Connecting to the VM with RDP/Parsec and installing the game is beyond the scope
 In order to start the VM, the steps are:
 1. Log into the google cloud shell and clone this repo 
 2. Create a .env file at the project root with the content:
-'''
+```
 TF_VAR_PROJID=your-project-id-here
 TF_VAR_REGION=us-central1-c
-'''
+```
 You can easily fetch your projectid on the gcloud interface
 
 3. Start the VM with the provided script
-'''
+```
 ./start_vm.sh
-'''
+```
 4. Once you are done playing stop it with the stop script
-'''
+```
 ./stop_vm.sh
+```
 
 It is very important to stop the VM if you are not playing, as it is billed by hour. If you forget to turn it off, your credits might get drained quickly
