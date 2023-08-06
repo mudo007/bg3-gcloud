@@ -7,7 +7,12 @@ variable "PROJID" {
   type        = string
 }
 
-variable "REGION" {
-  description = "Standard for Ashburn, Virginia"
-  default     = "us-east4-a"
+variable "ZONE" {
+  description = "Zone within a region"
+  type        = string
+}
+
+variable "GPU" {
+  description = "GPU type"
+  type        = string
 }

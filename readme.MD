@@ -9,17 +9,19 @@ In order to start the VM, the steps are:
 2. Create a .env file at the project root with the content:
 ```
 TF_VAR_PROJID=your-project-id-here
-TF_VAR_REGION=us-central1-c
 ```
 You can easily fetch your projectid on the gcloud interface
 
-3. Start the VM with the provided script
+3. Start the VM with the provided script, and choose among the 3 avilable GPU's
 ```
 ./start_vm.sh
 ```
+If there aren't any resources available, the error will be printed and the script will be halted
 4. Once you are done playing stop it with the stop script
 ```
 ./stop_vm.sh
 ```
 
 It is very important to stop the VM if you are not playing, as it is billed by hour. If you forget to turn it off, your credits might get drained quickly
+
+As of 08/06/2023, I always get an error (not enough GPU's, not enough SSD, or not enouth VM instances...) and I couldn't even start to think about how to automatically install steam and download the game...

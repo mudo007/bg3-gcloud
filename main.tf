@@ -21,10 +21,8 @@ resource "google_compute_instance" "bg3" {
 
   guest_accelerator {
     count = 1
-    type  = "projects/${var.PROJID}/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100-vws"
+    type  = "projects/${var.PROJID}/zones/us-central1-${var.ZONE}/acceleratorTypes/${var.GPU}"
   }
-
-  
 
   labels = {
     goog-ec-src = "vm_add-tf"
@@ -44,8 +42,8 @@ resource "google_compute_instance" "bg3" {
   scheduling {
     automatic_restart   = false
     on_host_maintenance = "TERMINATE"
-    preemptible         = true
-    provisioning_model  = "SPOT"
+    preemptible         = false
+    provisioning_model  = "STANDARD"
   }
 
   shielded_instance_config {
@@ -54,7 +52,7 @@ resource "google_compute_instance" "bg3" {
     enable_vtpm                 = true
   }
 
-  zone = "${var.REGION}"
+  zone = "us-central1-${var.ZONE}"
 }
 
 
