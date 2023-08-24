@@ -1,7 +1,5 @@
-# This code is compatible with Terraform 4.25.0 and versions that are backwards compatible to 4.25.0.
-# For information about validating this Terraform code, see https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/google-cloud-platform-build#format-and-validate-the-configuration
-
 resource "google_compute_instance" "bg3" {
+  project = "${var.PROJID}" 
   boot_disk {
     auto_delete = true
     device_name = "bg3"
